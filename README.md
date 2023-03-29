@@ -1,3 +1,32 @@
+Dear User, \
+Welcome to the application **"Indigo Jobs"** !
+
+You can find it here:
+- code: https://github.com/AAPrikhodko/indigoJobs
+
+Some notes:
+
+1. The application has SSO integration. So the steps are the following:
+  - Click "sign in with Indigo"
+  - Input username: feassignment@indigo.si, password: IndigoLabs4!
+  - You may also sign out using the button in header
+2. The application has a table with the job posts data.
+  - User can filter data by title
+  - User can refresh data by click Refresh button
+  - Mobile view displays only subset of columns
+  - When clicked on title of job post a modal window with details is opened
+  - Table uses pagination. Page size is 10.
+  - You can sort by any of the table fields
+3. The application has a responsive layout. It supports screen resolutions up to 375px (iPhone SE)
+4. About stack technology. This app was created based on:
+  - Angular
+  - Type Script
+  - Ant Design library
+  - SCSS preprocessor
+
+Thank you for using "Indigo Jobs" app!
+
+
 # IndigoJobs
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1.
