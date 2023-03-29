@@ -1,0 +1,14 @@
+.global-error {
+  padding: 10px;
+  background-color: darkred;
+  color: white;
+  position: relative;
+
+  .close-error {
+    border: none;
+    background-color: darkred;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+}

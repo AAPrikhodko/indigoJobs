@@ -1,0 +1,40 @@
+{
+  "header": {
+    "title": "Indigo Jobs"
+  },
+  "jobPostsPage": {
+    "header": "Job Posts"
+  },
+  "login": {
+    "welcomeText": "Welcome to the In Jobs App",
+    "notSignedIn": "You are not signed in"
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  },
+  "buttons": {
+    "refresh": "Refresh",
+    "signInWithIndigo": "Sign in with Indigo",
+    "signOut": "Sign Out"
+  },
+  "table": {
+    "caption": {
+      "title": "Title",
+      "opensAt": "Opens at",
+      "closesAt": "Closes at",
+      "numbersOfInterviews": "# of Interviews"
+    }
+  },
+  "loading": "Loading...",
+  "searchBy": {
+    "title": "search by title..."
+  },
+  "modal": {
+    "title": "Title:",
+    "opens": "Opens",
+    "numbersOfInterviews": "# of Interviews",
+    "closes": "Closes:",
+    "description": "Description:",
+    "notes": "Notes"
+  }
+}

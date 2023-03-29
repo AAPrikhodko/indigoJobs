@@ -1,0 +1,27 @@
+<nz-table
+  #customTable
+  [nzData]="jobPosts ? jobPosts : []"
+  [(nzPageSize)]="tableSettings.pageSize"
+>
+  <thead>
+  <tr>
+    <th
+      *ngFor="let column of tableSettings.columns"
+      [nzSortFn]="column.compare"
+      [class]="column.dataIndex"
+    >
+      {{column.caption}}
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr
+    *ngFor="let jobPost of customTable.data"
+    (click)="rowClickHandler(jobPost.id)"
+  >
+    <td *ngFor="let column of tableSettings.columns" [class]="column.dataIndex">
+      {{ renderCell(jobPost, column.dataIndex) }}
+    </td>
+  </tr>
+  </tbody>
+</nz-table>

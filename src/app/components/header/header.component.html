@@ -1,0 +1,11 @@
+<div class="header-wrapper">
+  <div class="header-title">{{textData.header.title}}</div>
+  <button
+    *ngIf="token"
+    (click)="signOut()"
+    nz-button
+    nzType="default"
+  >
+    Sign Out
+  </button>
+</div>

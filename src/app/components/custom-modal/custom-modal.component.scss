@@ -1,0 +1,29 @@
+.mainData {
+  display: flex;
+  flex-wrap: wrap;
+
+  div {
+    width: 50%;
+    padding: 5px 0;
+
+    span {
+      padding: 0 2px;
+    }
+
+    :last-child {
+      font-weight: 600;
+    }
+  }
+}
+
+.addData {
+  div {
+    display: flex;
+    padding: 5px 0;
+
+    div {
+      padding: 0 2px;
+    }
+  }
+}
+

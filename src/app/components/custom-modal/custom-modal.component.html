@@ -1,0 +1,20 @@
+<nz-modal
+  nzTitle="Job post"
+  nzVisible=true
+  (nzOnOk)="handleOk()"
+  (nzOnCancel)="handleOk()"
+  class="wrapper"
+>
+  <ng-container *nzModalContent>
+    <div class="mainData">
+      <div><span>{{textData.modal.title}}</span><span>{{currentJob?.title}}</span></div>
+      <div><span>{{textData.modal.opens}}</span><span>{{currentJob?.openAt | date:'dd.MM.yy'}}</span></div>
+      <div><span>{{textData.modal.numbersOfInterviews}}</span><span>{{currentJob?.interviewTypes?.length }}</span></div>
+      <div><span>{{textData.modal.closes}}</span><span>{{currentJob?.closeAt | date:'dd.MM.yy'}}</span></div>
+    </div>
+    <div class="addData">
+      <div><div>{{textData.modal.description}}</div><div>{{currentJob?.description}}</div></div>
+      <div><div>{{textData.modal.notes}}</div><div>{{currentJob?.notes}}</div></div>
+    </div>
+  </ng-container>
+</nz-modal>

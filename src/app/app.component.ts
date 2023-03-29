@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {JwksValidationHandler, OAuthService} from "angular-oauth2-oidc";
+import {authConfig} from "./sso.congig";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'indigoJobs';
+
+  constructor(private oauthService: OAuthService) {
+    this.configureSingleSignOn()
+  }
+
+  configureSingleSignOn() {
+    this.oauthService.configure(authConfig)
+    this.oauthService.tokenValidationHandler = new JwksValidationHandler()
+    this.oauthService.loadDiscoveryDocumentAndTryLogin()
+  }
+
+  signIn() {
+    this.oauthService.initImplicitFlow()
+  }
+
+  signOut() {
+    this.oauthService.logOut()
+  }
+
+  get token(): string | null {
+    let result: string = this.oauthService.getIdToken()
+    return result ? result : null
+  }
 }

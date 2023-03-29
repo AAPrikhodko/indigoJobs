@@ -1,0 +1,48 @@
+<div class="wrapper">
+  <div class="header">{{textData.jobPostsPage.header}}</div>
+  <div *ngIf="!loading" class="table-wrapper">
+    <div class="table-actions">
+      <button
+        nz-button
+        nzType="primary"
+        (click)="handleRefresh()"
+      >
+        {{textData.buttons.refresh}}
+      </button>
+      <div class="search-wrapper">
+        <nz-input-group
+          nzSearch
+          [nzAddOnAfter]="suffixIconButton"
+        >
+          <input
+            type="text"
+            nz-input
+            [placeholder]=textData.searchBy.title
+            [(ngModel)]="term"
+          />
+        </nz-input-group>
+        <ng-template #suffixIconButton>
+          <button
+            nz-button
+            nzType="primary"
+            nzSearch
+            (click)="handleSearch()"
+          >
+            <span nz-icon nzType="search"></span>
+          </button>
+        </ng-template>
+      </div>
+    </div>
+    <app-custom-table
+      [jobPosts]="jobPosts | filterJobs:searchText"
+      [tableSettings]="tableSettings"
+      (rowClickEvent)="handleRowClick($event)"
+    />
+  </div>
+  <div *ngIf="loading" class="loader">{{textData.loading}}</div>
+</div>
+<app-custom-modal
+  *ngIf="currentIdForModal"
+  [currentJob]="getJobByID(currentIdForModal)"
+  (OkClickEvent)="handleModalClose()"
+></app-custom-modal>
